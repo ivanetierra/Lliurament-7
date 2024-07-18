@@ -14,7 +14,7 @@ export class StarshipsComponent implements OnInit {
   constructor(private StarshipService: StarshipService) {}
 
   ngOnInit(): void {
-    this.StarshipService.getStarships().subscribe(data => {
+    this.StarshipService.getStarships().subscribe((data: any) => {
       this.starships = data.results;
     });
   }

@@ -3,9 +3,9 @@ import { HomeComponent } from './components/home/home.component';
 import { StarshipsComponent } from './components/starships/starships.component';
 import { StarshipComponent } from './components/starship/starship.component';
 
-const routes: Routes = [
+export const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'starships', component: StarshipsComponent },
-  { path: 'starship/:id', component: StarshipComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: 'starship/:id', component: StarshipComponent }
 ];
