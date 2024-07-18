@@ -2,6 +2,13 @@
   background-color: #212529;
   border-color: #dee2e6 #dee2e6 #fff;
 }
-.nav-tabs .nav-link {
+.nav-tabs {
   color: #ffffff;
+}
+
+a {
+  color: rgba(108, 117, 125, 1);
+  &:hover {
+    color: white;
+  }
 }
