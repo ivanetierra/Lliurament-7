@@ -1,0 +1,19 @@
+@if (starship) {
+  <div class="container mt-4 starship-container">
+    <div class="card bg-dark text-white starship-card">
+      <img class="card-img-top starship-image" src="https://starwars-visualguide.com/assets/img/starships/{{starship.id }}.jpg" alt="{{ starship.name }}">
+      <div class="card-body">
+        <h5 class="card-title starship-title">{{ starship.name }}</h5>
+        <p class="card-text starship-text">Model: {{ starship.model }}</p>
+        <p class="card-text starship-text">Manufacturer: {{ starship.manufacturer }}</p>
+        <p class="card-text starship-text">Cost in Credits: {{ starship.cost_in_credits }}</p>
+        <p class="card-text starship-text">Length: {{ starship.length }}</p>
+        <p class="card-text starship-text">Max Atmosphering Speed: {{ starship.max_atmosphering_speed }}</p>
+        <p class="card-text starship-text">Crew: {{ starship.crew }}</p>
+        <p class="card-text starship-text">Passengers: {{ starship.passengers }}</p>
+        <p class="card-text starship-text">Cargo Capacity: {{ starship.cargo_capacity }}</p>
+        <p class="card-text starship-text">Hyperdrive Rating: {{ starship.hyperdrive_rating }}</p>
+      </div>
+    </div>
+  </div>
+}

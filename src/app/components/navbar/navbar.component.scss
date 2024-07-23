@@ -1,14 +1,32 @@
+.nav-tabs .nav-link {
+  border: none;
+  &:hover, &:focus {
+    border-bottom: 2px solid #fff;
+    color: white !important;
+  }
+}
+
 .nav-tabs .nav-link.active {
   background-color: #212529;
-  border-color: #dee2e6 #dee2e6 #fff;
+  border-color: transparent transparent #fff transparent;
 }
-.nav-tabs {
-  color: #ffffff;
+
+.nav-item {
+  border: none;
 }
 
 a {
   color: rgba(108, 117, 125, 1);
-  &:hover {
-    color: white;
+  &:hover, &:focus {
+    color: white !important;
+    border: none;
+  }
+  border: none;
+}
+
+.nav-link {
+  color:rgba(108, 117, 125, 1);
+  &:hover, &:focus {
+    color: white !important;
   }
 }

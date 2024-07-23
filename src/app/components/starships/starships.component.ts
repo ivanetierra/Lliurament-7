@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StarshipService } from '../../services/starship.service';
 
 @Component({
@@ -11,11 +12,17 @@ import { StarshipService } from '../../services/starship.service';
 export class StarshipsComponent implements OnInit {
   starships: any[] = [];
 
-  constructor(private StarshipService: StarshipService) {}
+  constructor(private starshipService: StarshipService, private router: Router) { }
 
   ngOnInit(): void {
-    this.StarshipService.getStarships().subscribe((data: any) => {
+    this.starshipService.getStarships().subscribe(data => {
       this.starships = data.results;
     });
+  }
+
+  viewStarship(starship: any): void {
+    const urlSegments = starship.url.split('/');
+    const id = urlSegments[urlSegments.length - 2];
+    this.router.navigate(['/starship', id]);
   }
 }
