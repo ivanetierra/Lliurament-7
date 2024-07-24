@@ -12,6 +12,3 @@ export class NavbarComponent {
 
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-
-});

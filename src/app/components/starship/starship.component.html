@@ -1,18 +1,34 @@
 @if (starship) {
   <div class="container mt-4 starship-container">
-    <div class="card bg-dark text-white starship-card">
-      <img class="img-fluid card-img-top starship-image" [src]="imgUrl" alt="{{ starship.name }}">
-      <div class="card-body">
-        <h5 class="card-title starship-title">{{ starship.name }}</h5>
-        <p class="card-text starship-text">Model: {{ starship.model }}</p>
-        <p class="card-text starship-text">Manufacturer: {{ starship.manufacturer }}</p>
-        <p class="card-text starship-text">Cost in Credits: {{ starship.cost_in_credits }}</p>
-        <p class="card-text starship-text">Length: {{ starship.length }}</p>
-        <p class="card-text starship-text">Max Atmosphering Speed: {{ starship.max_atmosphering_speed }}</p>
-        <p class="card-text starship-text">Crew: {{ starship.crew }}</p>
-        <p class="card-text starship-text">Passengers: {{ starship.passengers }}</p>
-        <p class="card-text starship-text">Cargo Capacity: {{ starship.cargo_capacity }}</p>
-        <p class="card-text starship-text">Hyperdrive Rating: {{ starship.hyperdrive_rating }}</p>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+        <h3 class="text-white text-start">STARSHIP</h3>
+        <hr>
+      </div>
+      <!-- Contenedor de la imagen -->
+      <div class="col-md-5 pr-0">
+        <img class="img-fluid w-100 starship-image" [src]="imgUrl" alt="{{ starship.name }}">
+      </div>
+      <!-- Contenedor del texto -->
+      <div class="col-md-7 pl-0">
+        <div class="card bg-dark text-white starship-card">
+          <div class="card-body">
+            <h5 class="card-title starship-title">{{ starship.name }}</h5>
+            <div class="row">
+              <div class="col-md-6 text-wrap">
+                <p class="card-text starship-text"><strong>Model:</strong> {{ starship.model }}</p>
+                <p class="card-text starship-text"><strong>Manufacturer:</strong> {{ starship.manufacturer }}</p>
+                <p class="card-text starship-text"><strong>Cost in Credits:</strong> {{ starship.cost_in_credits }}</p>
+              </div>
+              <div class="col-md-6 text-wrap">
+                <p class="card-text starship-text"><strong>Length:</strong> {{ starship.length }}</p>
+                <p class="card-text starship-text"><strong>Max Atmosphering Speed:</strong> {{ starship.max_atmosphering_speed }}</p>
+                <p class="card-text starship-text"><strong>Crew:</strong> {{ starship.crew }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
