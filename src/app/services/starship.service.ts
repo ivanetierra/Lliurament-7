@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class StarshipService {
   private apiUrl = 'https://swapi.dev/api/starships';
+  private imgUrl: string = 'https://starwars-visualguide.com/assets/img/starships/';
 
   constructor(private http: HttpClient) {}
 
@@ -16,5 +17,9 @@ export class StarshipService {
 
   getStarship(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
+  getStarshipImgUrl(id: number): string {
+    return `${this.imgUrl}${id}.jpg`;
   }
 }

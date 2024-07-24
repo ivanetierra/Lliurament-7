@@ -21,8 +21,12 @@ export class StarshipsComponent implements OnInit {
   }
 
   viewStarship(starship: any): void {
-    const urlSegments = starship.url.split('/');
-    const id = urlSegments[urlSegments.length - 2];
+    const id = this.getIdFromUrl(starship.url);
     this.router.navigate(['/starship', id]);
+  }
+
+  private getIdFromUrl(url: string): number {
+    const segments = url.split('/');
+    return Number(segments[segments.length - 2]);
   }
 }

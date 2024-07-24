@@ -11,3 +11,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class NavbarComponent {
 
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+
+});

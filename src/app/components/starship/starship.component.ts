@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StarshipComponent implements OnInit {
   starship: any;
+  imgUrl?: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,6 +22,7 @@ export class StarshipComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.starshipService.getStarship(Number(id)).subscribe(data => {
       this.starship = data;
+      this.imgUrl = this.starshipService.getStarshipImgUrl(Number(id));
     });
   }
 }
