@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "email": "ivan@ivan.com",
+      "password": "$2a$10$r08EoB8ODPnpMqWeJJVKCupdrL6ZZTeGtXGvjdOYAEbBVbUUX.y1K",
+      "id": 1
+    }
+  ]
+}

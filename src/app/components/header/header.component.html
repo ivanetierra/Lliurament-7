@@ -1,18 +1,28 @@
 <div class="container-fluid py-2">
   <div class="row align-items-center">
     <div class="col d-flex justify-content-start mb-5">
-      <a href="#" class="me-2 "><i class="fab fa-facebook"></i></a>
-      <a href="#" class="me-2 "><i class="fab fa-instagram"></i></a>
-      <a href="#" class="me-2 "><i class="fab fa-twitter"></i></a>
-      <a href="#" class="me-2 "><i class="fab fa-youtube"></i></a>
+      <a href="#" class="me-2"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="me-2"><i class="fab fa-youtube"></i></a>
     </div>
     <div class="col d-flex justify-content-center">
-      <img src="/assets/images/starwarslogo.svg" alt="Star Wars Logo" class="img-fluid" style="height: 200px;">
+      <img
+        src="/assets/images/starwarslogo.svg"
+        alt="Star Wars Logo"
+        class="img-fluid"
+        style="height: 200px"
+      />
     </div>
     <div class="col d-flex justify-content-end mb-5">
-      <a href="#" class="me-2 ">LOG IN</a>
+      @if (authService.isLoggedIn) {
+      <span class="me-2">{{ authService.isLoggedIn.email }}</span>
+      <a href="#" (click)="logout()">LOG OUT</a>
+      } @else {
+      <a href="/login" class="me-2">LOG IN</a>
       <span class="text-secondary">//</span>
-      <a href="#" class="ms-2 ">SIGN UP</a>
+      <a href="/register" class="ms-2">SIGN UP</a>
+      }
     </div>
   </div>
 </div>
