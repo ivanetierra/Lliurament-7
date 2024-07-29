@@ -1,6 +1,8 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,26 +10,43 @@ import { Router } from '@angular/router';
 export class AuthService {
   private baseUrl = 'http://localhost:3000';
   private loggedInUser = signal<any>(null);
+  private error = signal<string | null>(null);
 
   constructor(private http: HttpClient, private router: Router) {}
 
   register(user: any) {
-    return this.http
+    this.http
       .post(`${this.baseUrl}/register`, user)
+      .pipe(
+        catchError((error) => {
+          this.error.set('Email already in use');
+          return of(null);
+        })
+      )
       .subscribe((response: any) => {
-        this.setToken(response.accessToken);
-        this.setLoggedInUser(response.user);
-        this.router.navigate(['/']);
+        if (response) {
+          this.setToken(response.accessToken);
+          this.setLoggedInUser(response.user);
+          this.router.navigate(['/']);
+        }
       });
   }
 
   login(user: any) {
-    return this.http
+    this.http
       .post(`${this.baseUrl}/login`, user)
+      .pipe(
+        catchError((error) => {
+          this.error.set('Invalid email or password');
+          return of(null);
+        })
+      )
       .subscribe((response: any) => {
-        this.setToken(response.accessToken);
-        this.setLoggedInUser(response.user);
-        this.router.navigate(['/']);
+        if (response) {
+          this.setToken(response.accessToken);
+          this.setLoggedInUser(response.user);
+          this.router.navigate(['/']);
+        }
       });
   }
 
@@ -47,5 +66,9 @@ export class AuthService {
 
   get isLoggedIn() {
     return this.loggedInUser();
+  }
+
+  get authError() {
+    return this.error();
   }
 }

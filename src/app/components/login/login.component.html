@@ -6,7 +6,7 @@
           <h3>Login</h3>
         </div>
         <div class="card-body">
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
               <input
@@ -14,7 +14,16 @@
                 id="email"
                 formControlName="email"
                 class="form-control"
+                [class.is-invalid]="
+                  email?.invalid && (email?.dirty || email?.touched)
+                "
               />
+              @if (email && email.invalid && (email.dirty || email.touched)) {
+              <div class="invalid-feedback">
+                @if (email.errors?.['required']) { Email is required. } @if
+                (email.errors?.['email']) { Email is not valid. }
+              </div>
+              }
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
@@ -23,13 +32,27 @@
                 id="password"
                 formControlName="password"
                 class="form-control"
+                [class.is-invalid]="
+                  password?.invalid && (password?.dirty || password?.touched)
+                "
               />
+              @if (password && password.invalid && (password.dirty ||
+              password.touched)) {
+              <div class="invalid-feedback">
+                @if (password.errors?.['required']) { Password is required. }
+                @if (password.errors?.['minlength']) { Password must be at least
+                8 characters long. }
+              </div>
+              }
             </div>
             <button type="submit" class="btn btn-primary w-100">Login</button>
+            @if (loginError()) {
+            <div class="alert alert-danger mt-3">{{ loginError() }}</div>
+            }
           </form>
         </div>
         <div class="card-footer text-center">
-          <a href="/register">Don't have an account? Register here</a>
+          <a routerLink="/register">Don't have an account? Register here</a>
         </div>
       </div>
     </div>
