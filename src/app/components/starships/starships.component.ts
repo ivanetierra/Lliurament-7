@@ -12,33 +12,33 @@ import { StarshipService } from '../../services/starship.service';
 export class StarshipsComponent implements OnInit {
   starships: any[] = [];
   loading: boolean = false;
+  currentPage: number = 1;
+  lastPage: number = 4;
 
   constructor(private starshipService: StarshipService, private router: Router) { }
 
   ngOnInit(): void {
-    this.loading = true;
-    this.starshipService.getStarships(1).subscribe(data => {
-      this.starships = data.results;
-      this.loading = false;
-    });
+    this.loadStarships();
   }
 
-  loadMoreStarships() {
-    if (this.loading) return;
+  loadStarships(): void {
+    if (this.currentPage > this.lastPage) return;
+
     this.loading = true;
-    this.starshipService.getNextPage().subscribe(data => {
+    this.starshipService.getStarships(this.currentPage).subscribe(data => {
       this.starships = [...this.starships, ...data.results];
       this.loading = false;
+      this.currentPage++;
     });
   }
 
   @HostListener('window:scroll', ['$event'])
-  onScroll(event: Event) {
+  onScroll(event: Event): void {
     const pos = (document.documentElement.scrollTop || document.body.scrollTop) + window.innerHeight;
     const max = document.documentElement.scrollHeight;
 
-    if (pos >= max - 10) {
-      this.loadMoreStarships();
+    if (pos >= max - 10 && !this.loading) {
+      this.loadStarships();
     }
   }
 
