@@ -22,6 +22,7 @@ export class RegisterComponent {
   }
 
   onSubmit() {
+    this.registerForm.markAllAsTouched();
     if (this.registerForm.invalid) {
       return;
     }
