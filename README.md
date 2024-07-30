@@ -1,7 +1,7 @@
 # Sprint 7 | Star Wars
 ## 📄 Descripción
 
-En esta entrega realizaremos una aplicación con el fin de facilitar los cálculos del presupuesto de una página web, añadiendo más interacciones con el usuario respecto a la práctica anterior (casillas de selección, inputs, botones).
+Esta aplicación web de Angular permite a los usuarios registrarse, iniciar sesión y explorar las naves espaciales de Star Wars. Cuenta con autenticación y autorización utilizando JSON Server y JSON Server Auth. Solo los usuarios registrados pueden acceder y ver la lista de naves espaciales y sus detalles.
 
 ## 💻 Tecnologías Utilizadas
 
@@ -9,6 +9,8 @@ En esta entrega realizaremos una aplicación con el fin de facilitar los cálcul
 - HTML, SCSS
 - Bootstrap
 - Angular18
+- JSON Server
+- JSON Server Auth (with JWT)
 
   
 ## 📋 Requisitos 
