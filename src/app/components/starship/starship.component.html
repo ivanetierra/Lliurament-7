@@ -8,7 +8,7 @@
       </div>
       <!-- Contenedor de la imagen -->
       <div class="col-md-5 pr-0">
-        <img class="img-fluid w-100 starship-image" [src]="imgUrl" alt="{{ starship.name }}">
+        <img class="img-fluid w-100 starship-image" [src]="imgUrl" (error)="notFound($event)" alt="{{ starship.name }}">
       </div>
       <!-- Contenedor del texto -->
       <div class="col-md-7 pl-0">

@@ -19,6 +19,47 @@
       "email": "a@Aa",
       "password": "$2a$10$fApgyflNxNWbLnU5RyQ/fealMLfjCe/LoQL2caaecP7cpWMc2ojIu",
       "id": 4
+    },
+    {
+      "email": "a@a2",
+      "password": "$2a$10$YuGT4Uu3k3vX9KXLOz0bNOVUv809dCfOHfAe8QCPt2ROksqdmhTPi",
+      "id": 5
+    },
+    {
+      "email": "a@a3",
+      "password": "$2a$10$38dEUfujrSb1bhv4W4rHsO3wohHByJpHN15FnJlN99VSEjVEpUxnW",
+      "id": 6
+    },
+    {
+      "email": "borja@gmail.com",
+      "password": "$2a$10$6GtukmZlewuWF8bVKVm.t.zb07DuPMMQHfO/BrYYmdytC0MXdwPKa",
+      "name": "borja",
+      "phone_no": "916791790",
+      "roles": "admin",
+      "id": 7
+    },
+    {
+      "email": "borja+1@gmail.com",
+      "password": "$2a$10$B7C30qoqRJAVxg5Qxx0LiO1RLIwt525HFFgG3j3dwmuCSeZIk1Mau",
+      "name": "borja",
+      "phone_no": "916791790",
+      "roles": "admin",
+      "id": 8
+    },
+    {
+      "email": "a@a4",
+      "password": "$2a$10$aR1coGJWtZfy6wkh5KzNCuoAo/8U1TdUqbPIC0a04fYFoDkyH1.H2",
+      "id": 9
+    },
+    {
+      "email": "a@a",
+      "password": "$2a$10$wVHHI5oq/B8OkBOUM84OteaboSC/GgvBsKqR5uHMhzDRirpubIs3u",
+      "id": 10
+    },
+    {
+      "email": "a@a444",
+      "password": "$2a$10$mYyLnVDPia75q48/mK4nz./WLX9dTa/Ln7.RgNWSbFF58JrH4L4HW",
+      "id": 11
     }
   ]
 }

@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class StarshipComponent implements OnInit {
   starship: any;
   imgUrl?: string;
+  notFoundUrl: string = 'https://starwars-visualguide.com/assets/img/big-placeholder.jpg';
 
   constructor(
     private route: ActivatedRoute,
@@ -24,5 +25,9 @@ export class StarshipComponent implements OnInit {
       this.starship = data;
       this.imgUrl = this.starshipService.getStarshipImgUrl(Number(id));
     });
+  }
+
+  notFound(event: any): void {
+    event.target.src = this.notFoundUrl;
   }
 }
