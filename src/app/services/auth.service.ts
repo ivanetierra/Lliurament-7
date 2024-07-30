@@ -27,7 +27,7 @@ export class AuthService {
         if (response) {
           this.setToken(response.accessToken);
           this.setLoggedInUser(response.user);
-          this.router.navigate(['/']);
+          this.router.navigate(['/starships']);
         }
       });
   }
@@ -45,7 +45,7 @@ export class AuthService {
         if (response) {
           this.setToken(response.accessToken);
           this.setLoggedInUser(response.user);
-          this.router.navigate(['/']);
+          this.router.navigate(['/starships']);
         }
       });
   }

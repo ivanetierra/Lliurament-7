@@ -60,6 +60,11 @@
       "email": "a@a444",
       "password": "$2a$10$mYyLnVDPia75q48/mK4nz./WLX9dTa/Ln7.RgNWSbFF58JrH4L4HW",
       "id": 11
+    },
+    {
+      "email": "a@a123",
+      "password": "$2a$10$AiPZjAMnT.4Gu0zF2ZUVROoSs2bo1EWPiluoqW00hSrztSVyANF1e",
+      "id": 12
     }
   ]
 }
